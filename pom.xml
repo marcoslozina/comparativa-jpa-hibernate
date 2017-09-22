@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ar.com.cdt.marcos.lozina</groupId>
+	<artifactId>comparativa-jpa-hibernate</artifactId>
+	<version>1.0</version>
+	<name>Comparativa-jpa-hibernate</name>
+	<description> Proyecto de ejemplo comparativa jpa con hibernate </description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Hibernate / JPA -->
+		<hibernate.version>4.3.11.Final</hibernate.version>
+		<!-- Driver MySQL -->
+		<mysql.connector.version>5.1.35</mysql.connector.version>
+		<!-- Weld - Implementación de CDI -->
+		<weld.version>2.2.10.Final</weld.version>
+		<!-- Weld depende de Jandex -->
+		<jandex.version>1.2.3.Final</jandex.version>
+		<!-- Commons Lang (utilidades) -->
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<!-- Junit -->
+		<junit.version>4.12</junit.version>
+		<!-- dbunit y dependencias -->
+		<dbunit.version>2.4.9</dbunit.version>
+		<jintegrity.version>0.1.2</jintegrity.version>
+		<slf4j-api.version>1.5.6</slf4j-api.version>
+		<slf4j-simple.version>1.5.6</slf4j-simple.version>
+		
+	</properties>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- DBUnit -->
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>${dbunit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Necessário para o DBUnit -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j-simple.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- jIntegrity -->
+		<dependency>
+			<groupId>com.jintegrity</groupId>
+			<artifactId>jintegrity</artifactId>
+			<version>${jintegrity.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>
