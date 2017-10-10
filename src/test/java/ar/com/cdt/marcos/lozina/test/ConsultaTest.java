@@ -70,6 +70,7 @@ public class ConsultaTest {
 	Criteria criteria = session.createCriteria(Registro.class);
 
 	criteria.add(Restrictions.ilike("descripcion", "internet", MatchMode.ANYWHERE));
+	assertEquals(2, criteria.list().size());
     }
 
 }
